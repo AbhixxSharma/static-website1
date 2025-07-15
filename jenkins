@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-    BUCKET_NAME = ' ' //ur bucket name 
-    REGION = ' ' // ur actual region 
+    BUCKET_NAME = 'my-static-website ' //ur bucket name 
+    REGION = 'us-east-1 ' // ur actual region 
   }
   stages {
     stage('Clone') {
