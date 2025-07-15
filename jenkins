@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  environment {
+    BUCKET_NAME = ' ' //ur bucket name 
+    REGION = ' ' // ur actual region 
+  }
+  stages {
+    stage('Clone') {
+      steps {
+        git ' ' // ur github repo link (place .git after the url)
+      }
+    }
+    stage('Deploy to S3') {
+      steps {
+        sh 'aws s3 sync . s3://$BUCKET_NAME --region $REGION --delete'
+      }
+    }
+  }
+}
